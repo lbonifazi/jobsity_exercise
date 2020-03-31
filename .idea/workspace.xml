@@ -4,6 +4,8 @@
     <list default="true" id="8259f6d3-9d79-433e-95a5-cf40c1df664e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +68,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="807" y="441" key="VCS.ChangelistChooser/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1585541404079" />
+    <state x="656" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1585691625757">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="656" y="349" key="com.intellij.ide.util.TipDialog/-1366.0.1366.738/0.0.1920.1050@0.0.1920.1050" timestamp="1585691625757" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1585534232738">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
