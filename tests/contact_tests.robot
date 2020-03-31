@@ -8,12 +8,9 @@ Library     Process
 Library     ../pages/ContactPage.py
 
 Suite Setup       Open Browser To Home Page
-Suite Teardown    Close Browser ${TEST NAME}
+Suite Teardown    Close Browser
 
 *** Keywords ***
-Load Test Data
-    Capture page screenshot  ${TEST NAME}.png
-
 User go to Contact page
     Go To    ${CONTACT URL}
     Contact page should be open
@@ -71,23 +68,13 @@ Contact Us form - Validate whether field Email is required
      And click the submit button
      Then Page Should Contain Element  ${FAIL ALERT}
 
-Contact Us form - Validate whether field Order Reference is required
+Contact Us form - Validate whether field File Attached and Order Reference are NOT required
      Given User go to Contact page
      When Select the Subject Heading  ${Customer Service}
      And enter email  test@test.com
-     And Choose File  ${Attach File}  ${DATA PATH}test.png
      And enter message  automation test without order reference
      And click the submit button
-     Then Page Should Contain Element  ${FAIL ALERT}
-
-Contact Us form - Validate whether field File Attached is required
-     Given User go to Contact page
-     When Select the Subject Heading  ${Customer Service}
-     And enter email  test@test.com
-     And enter order reference  1234
-     And enter message  automation test without file attached
-     And click the submit button
-     Then Page Should Contain Element  ${FAIL ALERT}
+     Then Page Should Contain Element  ${SUCCESS ALERT}
 
 Contact Us form - Validate whether field Message is required
      Given User go to Contact page
@@ -95,6 +82,16 @@ Contact Us form - Validate whether field Message is required
      And enter email  test@test.com
      And enter order reference  1234
      And Choose File  ${Attach File}  ${DATA PATH}test.png
+     And click the submit button
+     Then Page Should Contain Element  ${FAIL ALERT}
+
+Contact Us form - Validate when blank space in Message field
+     Given User go to Contact page
+     When Select the Subject Heading  ${Webmaster}
+     And enter email  test@test.com
+     And enter order reference  1234
+     And Choose File  ${Attach File}  ${DATA PATH}test.png
+     And enter message  ${SPACE}
      And click the submit button
      Then Page Should Contain Element  ${FAIL ALERT}
 
@@ -107,6 +104,16 @@ Contact Us form - Validate invalid email
      Given User go to Contact page
      When Select the Subject Heading  ${Webmaster}
      And enter email  test@test
+     And enter order reference  1234
+     And Choose File  ${Attach File}  ${DATA PATH}test.png
+     And enter message  automation test message for webmaster
+     And click the submit button
+     Then Page Should Contain Element  ${FAIL ALERT}
+
+Contact Us form - Validate symbols in email field
+     Given User go to Contact page
+     When Select the Subject Heading  ${Webmaster}
+     And enter email  !"·$%@test.com
      And enter order reference  1234
      And Choose File  ${Attach File}  ${DATA PATH}test.png
      And enter message  automation test message for webmaster
