@@ -1,6 +1,5 @@
 *** Settings ***
 Resource    ../helpers/resource.robot
-Variables   ../helpers/config.py
 
 Library     PageObjectLibrary
 Library     SeleniumLibrary
